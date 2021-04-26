@@ -1,3 +1,6 @@
+import '@pnotify/core/dist/BrightTheme.css';
+// const { alert, notice, info, success, error } = require('@pnotify/core');
+
 const API_KEY = '21331461-15f5bdfd142a82f8595dd354e';
 const BASE_URL = 'https://pixabay.com/api/';
 const PROPS = '&image_type=photo&orientation=horizontal&per_page=12';
@@ -15,7 +18,7 @@ export default class ApiService {
       .then(response => response.json())
       .then(({ hits }) => {
         if (hits.length === 0) {
-          alert('нет результатов!');
+          alert('по данному запросу нет результатов!');
         }
         this.incrementPage();
         return hits;
